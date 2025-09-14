@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Sunrise Bakery",
+    "email": "orders@sunrisebakery.com",
+    "phone": "+1-555-0101",
+    "address": "123 Main Street, Downtown, San Francisco, CA 94105",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "business_hours": {
+      "monday": { "open": "06:00", "close": "18:00" },
+      "tuesday": { "open": "06:00", "close": "18:00" },
+      "wednesday": { "open": "06:00", "close": "18:00" },
+      "thursday": { "open": "06:00", "close": "18:00" },
+      "friday": { "open": "06:00", "close": "20:00" },
+      "saturday": { "open": "07:00", "close": "20:00" },
+      "sunday": { "open": "08:00", "close": "16:00" }
+    },
+    "pickup_instructions": "Enter through main entrance. Ring bell if door is locked.",
+    "specialty": "Artisan breads and fresh croissants",
+    "image": "sunrise-bakery.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Corner Café",
+    "email": "hello@cornercafe.com",
+    "phone": "+1-555-0102",
+    "address": "456 Oak Avenue, Mission District, San Francisco, CA 94110",
+    "latitude": 37.7599,
+    "longitude": -122.4148,
+    "business_hours": {
+      "monday": { "open": "07:00", "close": "17:00" },
+      "tuesday": { "open": "07:00", "close": "17:00" },
+      "wednesday": { "open": "07:00", "close": "17:00" },
+      "thursday": { "open": "07:00", "close": "17:00" },
+      "friday": { "open": "07:00", "close": "18:00" },
+      "saturday": { "open": "08:00", "close": "18:00" },
+      "sunday": { "closed": true }
+    },
+    "pickup_instructions": "Use side entrance on Oak Avenue after 4 PM.",
+    "specialty": "Coffee, sandwiches, and daily soups",
+    "image": "corner-cafe.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Artisan Breads Co.",
+    "email": "info@artisanbreads.com",
+    "phone": "+1-555-0103",
+    "address": "789 Valencia Street, Mission District, San Francisco, CA 94110",
+    "latitude": 37.7612,
+    "longitude": -122.4214,
+    "business_hours": {
+      "tuesday": { "open": "08:00", "close": "19:00" },
+      "wednesday": { "open": "08:00", "close": "19:00" },
+      "thursday": { "open": "08:00", "close": "19:00" },
+      "friday": { "open": "08:00", "close": "20:00" },
+      "saturday": { "open": "08:00", "close": "20:00" },
+      "sunday": { "open": "09:00", "close": "17:00" },
+      "monday": { "closed": true }
+    },
+    "pickup_instructions": "Located in shared kitchen space. Text when you arrive.",
+    "specialty": "Sourdough and whole grain breads",
+    "image": "artisan-breads.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sweet Dreams Patisserie",
+    "email": "orders@sweetdreamspatisserie.com",
+    "phone": "+1-555-0104",
+    "address": "321 Union Square, Nob Hill, San Francisco, CA 94108",
+    "latitude": 37.7879,
+    "longitude": -122.4075,
+    "business_hours": {
+      "monday": { "open": "09:00", "close": "19:00" },
+      "tuesday": { "open": "09:00", "close": "19:00" },
+      "wednesday": { "open": "09:00", "close": "19:00" },
+      "thursday": { "open": "09:00", "close": "19:00" },
+      "friday": { "open": "09:00", "close": "21:00" },
+      "saturday": { "open": "09:00", "close": "21:00" },
+      "sunday": { "open": "10:00", "close": "18:00" }
+    },
+    "pickup_instructions": "Front counter pickup. Show confirmation code.",
+    "specialty": "French pastries and custom cakes",
+    "image": "sweet-dreams.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Daily Grind Coffee",
+    "email": "team@dailygrindcoffee.com",
+    "phone": "+1-555-0105",
+    "address": "654 Castro Street, Castro District, San Francisco, CA 94114",
+    "latitude": 37.7609,
+    "longitude": -122.4350,
+    "business_hours": {
+      "monday": { "open": "06:30", "close": "16:00" },
+      "tuesday": { "open": "06:30", "close": "16:00" },
+      "wednesday": { "open": "06:30", "close": "16:00" },
+      "thursday": { "open": "06:30", "close": "16:00" },
+      "friday": { "open": "06:30", "close": "17:00" },
+      "saturday": { "open": "07:00", "close": "17:00" },
+      "sunday": { "open": "07:30", "close": "15:00" }
+    },
+    "pickup_instructions": "Counter service until close, then use side window.",
+    "specialty": "Single-origin coffee and breakfast pastries",
+    "image": "daily-grind.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Golden Gate Donuts",
+    "email": "info@ggdonuts.com",
+    "phone": "+1-555-0106",
+    "address": "987 Irving Street, Sunset District, San Francisco, CA 94122",
+    "latitude": 37.7644,
+    "longitude": -122.4692,
+    "business_hours": {
+      "monday": { "open": "05:00", "close": "20:00" },
+      "tuesday": { "open": "05:00", "close": "20:00" },
+      "wednesday": { "open": "05:00", "close": "20:00" },
+      "thursday": { "open": "05:00", "close": "20:00" },
+      "friday": { "open": "05:00", "close": "21:00" },
+      "saturday": { "open": "05:00", "close": "21:00" },
+      "sunday": { "open": "06:00", "close": "20:00" }
+    },
+    "pickup_instructions": "24/7 pickup available through automated locker system.",
+    "specialty": "Fresh donuts and coffee",
+    "image": "golden-gate-donuts.jpg"
+  }
+]

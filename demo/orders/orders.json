@@ -1,0 +1,179 @@
+[
+  {
+    "id": 1,
+    "customer_id": 1,
+    "merchant_id": 1,
+    "status": "completed",
+    "confirmation_code": "SR1001",
+    "total_amount": 14.50,
+    "pickup_window_start": "2025-09-13T17:00:00Z",
+    "pickup_window_end": "2025-09-13T19:00:00Z",
+    "created_at": "2025-09-13T15:30:00Z",
+    "picked_up_at": "2025-09-13T17:45:00Z",
+    "items": [
+      {
+        "item_type": "bundle",
+        "item_id": 1,
+        "name": "Morning Pastry Box",
+        "quantity": 1,
+        "price_at_purchase": 12.50
+      },
+      {
+        "item_type": "product",
+        "item_id": 1,
+        "name": "Fresh Croissants",
+        "quantity": 1,
+        "price_at_purchase": 1.75
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "customer_id": 2,
+    "merchant_id": 2,
+    "status": "ready_for_pickup",
+    "confirmation_code": "CC2001",
+    "total_amount": 8.00,
+    "pickup_window_start": "2025-09-14T15:00:00Z",
+    "pickup_window_end": "2025-09-14T17:00:00Z",
+    "created_at": "2025-09-14T12:15:00Z",
+    "picked_up_at": null,
+    "items": [
+      {
+        "item_type": "bundle",
+        "item_id": 2,
+        "name": "Healthy Lunch Combo",
+        "quantity": 1,
+        "price_at_purchase": 8.00
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "customer_id": 3,
+    "merchant_id": 6,
+    "status": "pending",
+    "confirmation_code": "GG3001",
+    "total_amount": 3.75,
+    "pickup_window_start": "2025-09-14T18:00:00Z",
+    "pickup_window_end": "2025-09-14T20:00:00Z",
+    "created_at": "2025-09-14T16:20:00Z",
+    "picked_up_at": null,
+    "items": [
+      {
+        "item_type": "product",
+        "item_id": 9,
+        "name": "Glazed Donuts",
+        "quantity": 3,
+        "price_at_purchase": 1.25
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "customer_id": 4,
+    "merchant_id": 4,
+    "status": "completed",
+    "confirmation_code": "SD4001",
+    "total_amount": 11.00,
+    "pickup_window_start": "2025-09-12T18:00:00Z",
+    "pickup_window_end": "2025-09-12T20:00:00Z",
+    "created_at": "2025-09-12T16:45:00Z",
+    "picked_up_at": "2025-09-12T19:20:00Z",
+    "items": [
+      {
+        "item_type": "bundle",
+        "item_id": 3,
+        "name": "French Pastry Selection",
+        "quantity": 1,
+        "price_at_purchase": 11.00
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "customer_id": 5,
+    "merchant_id": 3,
+    "status": "completed",
+    "confirmation_code": "AB5001",
+    "total_amount": 6.50,
+    "pickup_window_start": "2025-09-11T16:00:00Z",
+    "pickup_window_end": "2025-09-11T18:00:00Z",
+    "created_at": "2025-09-11T14:30:00Z",
+    "picked_up_at": "2025-09-11T17:10:00Z",
+    "items": [
+      {
+        "item_type": "product",
+        "item_id": 5,
+        "name": "Whole Wheat Bread",
+        "quantity": 2,
+        "price_at_purchase": 3.25
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "customer_id": 6,
+    "merchant_id": 5,
+    "status": "cancelled",
+    "confirmation_code": "DG6001",
+    "total_amount": 9.25,
+    "pickup_window_start": "2025-09-13T14:00:00Z",
+    "pickup_window_end": "2025-09-13T16:00:00Z",
+    "created_at": "2025-09-13T11:00:00Z",
+    "picked_up_at": null,
+    "cancelled_at": "2025-09-13T13:45:00Z",
+    "cancellation_reason": "Customer requested cancellation",
+    "items": [
+      {
+        "item_type": "bundle",
+        "item_id": 4,
+        "name": "Coffee & Pastry Deal",
+        "quantity": 1,
+        "price_at_purchase": 9.25
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "customer_id": 7,
+    "merchant_id": 1,
+    "status": "ready_for_pickup",
+    "confirmation_code": "SR7001",
+    "total_amount": 4.00,
+    "pickup_window_start": "2025-09-14T17:30:00Z",
+    "pickup_window_end": "2025-09-14T19:30:00Z",
+    "created_at": "2025-09-14T15:45:00Z",
+    "picked_up_at": null,
+    "items": [
+      {
+        "item_type": "product",
+        "item_id": 2,
+        "name": "Sourdough Bread Loaf",
+        "quantity": 1,
+        "price_at_purchase": 4.00
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "customer_id": 8,
+    "merchant_id": 6,
+    "status": "completed",
+    "confirmation_code": "GG8001",
+    "total_amount": 16.25,
+    "pickup_window_start": "2025-09-10T09:00:00Z",
+    "pickup_window_end": "2025-09-10T11:00:00Z",
+    "created_at": "2025-09-10T07:30:00Z",
+    "picked_up_at": "2025-09-10T09:30:00Z",
+    "items": [
+      {
+        "item_type": "bundle",
+        "item_id": 5,
+        "name": "Donut Dozen Mix",
+        "quantity": 1,
+        "price_at_purchase": 16.25
+      }
+    ]
+  }
+]

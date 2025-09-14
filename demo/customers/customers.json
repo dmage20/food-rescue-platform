@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Emma Chen",
+    "email": "emma.chen@email.com",
+    "phone": "+1-555-1001",
+    "preferred_radius": 2.5,
+    "dietary_preferences": {
+      "allergies": ["nuts"],
+      "preferences": ["vegetarian"],
+      "avoid": ["gluten"]
+    },
+    "favorite_categories": ["pastries", "bread"],
+    "created_at": "2025-09-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Johnson",
+    "email": "marcus.j@email.com",
+    "phone": "+1-555-1002",
+    "preferred_radius": 5.0,
+    "dietary_preferences": {
+      "allergies": [],
+      "preferences": ["vegan"],
+      "avoid": ["dairy", "eggs"]
+    },
+    "favorite_categories": ["bread", "sandwiches"],
+    "created_at": "2025-08-15T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Sarah Williams",
+    "email": "sarah.williams@email.com",
+    "phone": "+1-555-1003",
+    "preferred_radius": 3.0,
+    "dietary_preferences": {
+      "allergies": ["dairy"],
+      "preferences": [],
+      "avoid": ["dairy"]
+    },
+    "favorite_categories": ["donuts", "muffins", "desserts"],
+    "created_at": "2025-08-28T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "David Rodriguez",
+    "email": "david.rodriguez@email.com",
+    "phone": "+1-555-1004",
+    "preferred_radius": 1.5,
+    "dietary_preferences": {
+      "allergies": [],
+      "preferences": [],
+      "avoid": []
+    },
+    "favorite_categories": ["pastries", "desserts", "sandwiches"],
+    "created_at": "2025-09-05T16:45:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Lisa Park",
+    "email": "lisa.park@email.com",
+    "phone": "+1-555-1005",
+    "preferred_radius": 4.0,
+    "dietary_preferences": {
+      "allergies": ["eggs"],
+      "preferences": ["organic", "high-fiber"],
+      "avoid": ["eggs"]
+    },
+    "favorite_categories": ["bread", "muffins"],
+    "created_at": "2025-08-20T11:20:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Michael Brown",
+    "email": "mike.brown@email.com",
+    "phone": "+1-555-1006",
+    "preferred_radius": 3.5,
+    "dietary_preferences": {
+      "allergies": [],
+      "preferences": ["vegetarian"],
+      "avoid": []
+    },
+    "favorite_categories": ["donuts", "pastries"],
+    "created_at": "2025-09-08T13:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Jennifer Davis",
+    "email": "jen.davis@email.com",
+    "phone": "+1-555-1007",
+    "preferred_radius": 2.0,
+    "dietary_preferences": {
+      "allergies": ["gluten", "nuts"],
+      "preferences": ["gluten-free"],
+      "avoid": ["gluten", "nuts"]
+    },
+    "favorite_categories": [],
+    "created_at": "2025-09-12T08:30:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Robert Kim",
+    "email": "robert.kim@email.com",
+    "phone": "+1-555-1008",
+    "preferred_radius": 6.0,
+    "dietary_preferences": {
+      "allergies": [],
+      "preferences": ["low-sugar"],
+      "avoid": []
+    },
+    "favorite_categories": ["bread", "sandwiches"],
+    "created_at": "2025-08-25T15:10:00Z"
+  }
+]

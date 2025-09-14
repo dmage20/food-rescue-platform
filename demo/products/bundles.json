@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "merchant_id": 1,
+    "name": "Morning Pastry Box",
+    "description": "A delightful assortment of our morning pastries. Perfect for sharing with colleagues or family. Contents may vary based on availability.",
+    "original_price": 25.00,
+    "discounted_price": 12.50,
+    "discount_percentage": 50,
+    "available_quantity": 5,
+    "expires_at": "2025-09-14T18:00:00Z",
+    "items": [
+      { "product_id": 1, "quantity": 4, "name": "Fresh Croissants" },
+      { "product_id": 2, "quantity": 1, "name": "Sourdough Bread Loaf" }
+    ],
+    "images": ["morning-box-1.jpg", "morning-box-2.jpg"]
+  },
+  {
+    "id": 2,
+    "merchant_id": 2,
+    "name": "Healthy Lunch Combo",
+    "description": "Nutritious lunch combination with sandwich and muffin. Great value for a filling meal.",
+    "original_price": 16.00,
+    "discounted_price": 8.00,
+    "discount_percentage": 50,
+    "available_quantity": 3,
+    "expires_at": "2025-09-14T16:00:00Z",
+    "items": [
+      { "product_id": 3, "quantity": 1, "name": "Veggie Sandwich" },
+      { "product_id": 4, "quantity": 2, "name": "Chocolate Chip Muffins" }
+    ],
+    "images": ["lunch-combo.jpg"]
+  },
+  {
+    "id": 3,
+    "merchant_id": 4,
+    "name": "French Pastry Selection",
+    "description": "An elegant selection of our finest French pastries. Perfect for a special occasion or treating yourself.",
+    "original_price": 22.00,
+    "discounted_price": 11.00,
+    "discount_percentage": 50,
+    "available_quantity": 2,
+    "expires_at": "2025-09-14T19:00:00Z",
+    "items": [
+      { "product_id": 6, "quantity": 2, "name": "Almond Croissants" },
+      { "product_id": 7, "quantity": 2, "name": "Fruit Tarts" }
+    ],
+    "images": ["french-selection-1.jpg", "french-selection-2.jpg"]
+  },
+  {
+    "id": 4,
+    "merchant_id": 5,
+    "name": "Coffee & Pastry Deal",
+    "description": "Start your day right with coffee beans and fresh pastries. Includes our signature blend coffee (1 lb bag) and morning pastries.",
+    "original_price": 18.50,
+    "discounted_price": 9.25,
+    "discount_percentage": 50,
+    "available_quantity": 4,
+    "expires_at": "2025-09-15T15:00:00Z",
+    "items": [
+      { "product_id": 8, "quantity": 3, "name": "Blueberry Scones" }
+    ],
+    "additional_items": [
+      { "name": "Signature Coffee Blend (1 lb)", "quantity": 1 }
+    ],
+    "images": ["coffee-pastry-deal.jpg"]
+  },
+  {
+    "id": 5,
+    "merchant_id": 6,
+    "name": "Donut Dozen Mix",
+    "description": "A baker's dozen (13) of assorted donuts. Mix of glazed, chocolate, and seasonal flavors. Great for office meetings or parties.",
+    "original_price": 32.50,
+    "discounted_price": 16.25,
+    "discount_percentage": 50,
+    "available_quantity": 3,
+    "expires_at": "2025-09-15T10:00:00Z",
+    "items": [
+      { "product_id": 9, "quantity": 7, "name": "Glazed Donuts" },
+      { "product_id": 10, "quantity": 6, "name": "Chocolate Donuts" }
+    ],
+    "images": ["donut-dozen-1.jpg", "donut-dozen-2.jpg"]
+  },
+  {
+    "id": 6,
+    "merchant_id": 3,
+    "name": "Bread Lover's Bundle",
+    "description": "Perfect for families who love fresh bread. Includes a variety of our artisan breads.",
+    "original_price": 20.00,
+    "discounted_price": 10.00,
+    "discount_percentage": 50,
+    "available_quantity": 4,
+    "expires_at": "2025-09-16T17:00:00Z",
+    "items": [
+      { "product_id": 2, "quantity": 1, "name": "Sourdough Bread Loaf" },
+      { "product_id": 5, "quantity": 2, "name": "Whole Wheat Bread" }
+    ],
+    "images": ["bread-bundle.jpg"]
+  }
+]

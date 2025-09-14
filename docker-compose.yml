@@ -1,0 +1,156 @@
+version: '3.8'
+
+services:
+  # Database Services
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: food-rescue-postgres
+    environment:
+      POSTGRES_DB: food_rescue_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./shared/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: food-rescue-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Rails API
+  rails-api:
+    build:
+      context: ./rails-api
+      dockerfile: Dockerfile
+    container_name: food-rescue-rails
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/food_rescue_development
+      - REDIS_URL=redis://redis:6379/0
+      - RAILS_ENV=development
+      - LOCATION_SERVICE_URL=http://location-service:3001
+      - INVENTORY_SERVICE_URL=http://inventory-service:3002
+      - IMAGE_SERVICE_URL=http://image-processor:3003
+    volumes:
+      - ./rails-api:/app
+      - rails_gems:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: bash -c "bundle install && rails db:prepare && rails server -b 0.0.0.0"
+
+  # Rust Microservices
+  location-service:
+    build:
+      context: ./rust-services/location-service
+      dockerfile: Dockerfile
+    container_name: food-rescue-location
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/food_rescue_development
+      - REDIS_URL=redis://redis:6379/1
+      - RUST_LOG=info
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  inventory-tracker:
+    build:
+      context: ./rust-services/inventory-tracker
+      dockerfile: Dockerfile
+    container_name: food-rescue-inventory
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/food_rescue_development
+      - REDIS_URL=redis://redis:6379/2
+      - RUST_LOG=info
+    ports:
+      - "3002:3002"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  image-processor:
+    build:
+      context: ./rust-services/image-processor
+      dockerfile: Dockerfile
+    container_name: food-rescue-images
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-us-west-2}
+      - S3_BUCKET=${S3_BUCKET:-food-rescue-images}
+      - RUST_LOG=info
+    ports:
+      - "3003:3003"
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: food-rescue-frontend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3000/api
+      - NEXT_PUBLIC_WS_URL=ws://localhost:3002
+      - NEXT_PUBLIC_MAPBOX_TOKEN=${MAPBOX_TOKEN}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3100:3000"
+    depends_on:
+      - rails-api
+
+  # Background Jobs (Sidekiq)
+  sidekiq:
+    build:
+      context: ./rails-api
+      dockerfile: Dockerfile
+    container_name: food-rescue-sidekiq
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/food_rescue_development
+      - REDIS_URL=redis://redis:6379/0
+      - RAILS_ENV=development
+    volumes:
+      - ./rails-api:/app
+      - rails_gems:/usr/local/bundle
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: bash -c "bundle install && bundle exec sidekiq"
+
+volumes:
+  postgres_data:
+  redis_data:
+  rails_gems:
+
+networks:
+  default:
+    name: food-rescue-network
