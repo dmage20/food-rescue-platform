@@ -4,6 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Common Development Commands
 
+### Quick Start with Makefile
+```bash
+# Initial setup (first time only)
+make setup
+
+# Start all services
+make start
+
+# Check service status
+make status
+
+# Stop all services
+make stop
+
+# View all available commands
+make help
+```
+
 ### Environment Setup
 ```bash
 # For Docker environment (when available)
@@ -11,15 +29,26 @@ docker-compose up -d
 docker-compose exec rails-api rails db:setup
 docker-compose exec rails-api rails db:seed
 
-# For local development
+# For local development with Makefile
+make setup              # Install deps, setup DB, seed data
+make start             # Start Rails API + Frontend
+make stop              # Stop all services
+
+# Manual local development
 cd rails-api && rails db:create db:migrate db:seed
 cd ../frontend && npm install && npm run build
 ```
 
 ### Rails API Development
 ```bash
-# Enter Rails container
-docker-compose exec rails-api bash
+# Using Makefile commands
+make dev-console        # Rails console
+make test              # Run all tests
+make db-reset          # Reset database with fresh data
+make logs-rails        # View Rails logs
+
+# Direct Rails commands
+cd rails-api
 
 # Run Rails console
 rails console
@@ -54,7 +83,12 @@ docker-compose logs -f image-processor
 
 ### Frontend Development
 ```bash
-# Enter frontend directory
+# Using Makefile commands
+make dev-frontend       # Start frontend in development mode
+make build             # Build all services including frontend
+make logs-frontend     # View frontend logs
+
+# Direct frontend commands
 cd frontend
 
 # Install dependencies
