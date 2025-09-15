@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Providers } from '@/providers/Providers'
+import { Navigation } from '@/components/layout/Navigation'
 
 export const metadata: Metadata = {
   title: 'Food Rescue Platform',
@@ -13,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }
