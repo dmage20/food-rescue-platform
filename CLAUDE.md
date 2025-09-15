@@ -156,21 +156,78 @@ The platform includes comprehensive demo data in `/demo/`:
 ### ✅ Completed
 - **Rails API**: Full database schema with 7 models and associations
 - **Database**: PostgreSQL with PostGIS support, migrations and indexes
-- **Models**: Merchant, Customer, Product, Bundle, BundleItem, Order, OrderItem
-- **Testing**: RSpec setup with FactoryBot, Shoulda Matchers, and DatabaseCleaner
-- **Authentication**: BCrypt password hashing (Devise/JWT not yet configured)
-- **Next.js Frontend**: TypeScript setup with Tailwind CSS
+- **Models**: Merchant, Customer, Product, Bundle, BundleItem, Order, OrderItem with comprehensive validations
+- **Authentication**: Devise with JWT authentication for both merchants and customers
+- **API Endpoints**: Complete REST API for merchants, customers, products, bundles, orders, and browsing
+- **Testing**: RSpec setup with FactoryBot, comprehensive model tests
+- **Next.js Frontend**: TypeScript setup with Tailwind CSS, mobile-responsive design
 - **Demo Data**: 6 merchants, 8 customers, 10 products, 6 bundles loaded via seeds
-- **End-to-end Testing**: Playwright configuration for frontend testing
+- **End-to-end Testing**: Playwright tests passing for all device types
+- **Service Management**: Makefile-based orchestration for development workflow
 
 ### 🚧 In Progress / TODO
-- API endpoints for merchants, customers, products, bundles, orders
-- JWT authentication with Devise
-- Authorization with Pundit
+- Authorization with Pundit (basic structure in place)
 - Rust microservices (location, inventory, image processing)
 - Real-time WebSocket connections
 - Payment integration with Stripe
 - SMS notifications with Twilio
+- Frontend authentication UI
+- Admin dashboard for merchants
+- Customer mobile app interface
+
+## API Endpoints
+
+### Authentication
+```
+POST /api/merchants/sign_in     # Merchant login (JWT)
+POST /api/merchants/sign_up     # Merchant registration
+DELETE /api/merchants/sign_out  # Merchant logout
+
+POST /api/customers/sign_in     # Customer login (JWT)
+POST /api/customers/sign_up     # Customer registration
+DELETE /api/customers/sign_out  # Customer logout
+```
+
+### Merchant Management
+```
+GET /api/merchant              # Get current merchant profile
+PATCH /api/merchant            # Update merchant profile
+
+GET /api/products              # List merchant's products
+POST /api/products             # Create new product
+GET /api/products/:id          # Get specific product
+PATCH /api/products/:id        # Update product
+DELETE /api/products/:id       # Delete product
+
+GET /api/bundles               # List merchant's bundles
+POST /api/bundles              # Create new bundle
+GET /api/bundles/:id           # Get specific bundle
+PATCH /api/bundles/:id         # Update bundle
+DELETE /api/bundles/:id        # Delete bundle
+
+GET /api/orders                # List merchant's orders
+GET /api/orders/:id            # Get specific order
+PATCH /api/orders/:id          # Update order status
+```
+
+### Customer Browsing
+```
+GET /api/customer              # Get current customer profile
+PATCH /api/customer            # Update customer profile
+
+GET /api/browse/merchants      # Find nearby merchants
+GET /api/browse/products       # Browse available products
+GET /api/browse/bundles        # Browse available bundles
+
+POST /api/orders               # Create new order
+GET /api/orders                # List customer's orders
+GET /api/orders/:id            # Get specific order
+```
+
+### Query Parameters
+- **Location filtering**: `?latitude=37.7749&longitude=-122.4194&radius=5`
+- **Product filtering**: `?category=bakery&min_price=5&max_price=20&search=croissant`
+- **Bundle filtering**: `?min_price=10&max_price=50&search=breakfast`
 
 ## Development Notes
 
@@ -179,3 +236,5 @@ The platform includes comprehensive demo data in `/demo/`:
 - Demo data includes realistic SF Bay Area merchants and products
 - All models include comprehensive validations and business logic
 - Follow mobile-first responsive design principles
+- JWT tokens are required for authenticated endpoints
+- All API responses follow consistent JSON structure with status/data/errors

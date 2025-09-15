@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
-  has_secure_password
+  devise :database_authenticatable, :registerable,
+         :jwt_authenticatable, jwt_revocation_strategy: Devise::JWT::RevocationStrategies::Null
 
   has_many :orders, dependent: :destroy
 

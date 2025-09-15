@@ -20,6 +20,8 @@ help:
 	@echo "  install        Install dependencies for all services"
 	@echo "  build          Build all services"
 	@echo "  test           Run all tests"
+	@echo "  test-mobile    Run mobile-specific tests (iPhone/Android)"
+	@echo "  test-ui        Run tests with interactive UI"
 	@echo ""
 	@echo "Database:"
 	@echo "  db-setup       Setup database (migrate and seed)"
@@ -201,9 +203,20 @@ test:
 	@cd $(RAILS_DIR) && bundle exec rspec
 	@echo ""
 	@echo "Running Frontend tests..."
-	@cd $(FRONTEND_DIR) && npm test
+	@cd $(FRONTEND_DIR) && npx playwright test
 	@echo ""
 	@echo "$(GREEN)✅ All tests completed$(NC)"
+
+# Run mobile-specific tests
+test-mobile:
+	@echo "$(YELLOW)📱 Running mobile tests...$(NC)"
+	@cd $(FRONTEND_DIR) && npx playwright test --project="Mobile Chrome" --project="Mobile Safari"
+	@echo "$(GREEN)✅ Mobile tests completed$(NC)"
+
+# Run tests with UI for debugging
+test-ui:
+	@echo "$(YELLOW)🖥️  Running tests with UI...$(NC)"
+	@cd $(FRONTEND_DIR) && npx playwright test --ui
 
 # Show logs from all services
 logs:
@@ -246,3 +259,14 @@ dev-frontend:
 dev-console:
 	@echo "$(GREEN)💻 Opening Rails console...$(NC)"
 	@cd $(RAILS_DIR) && bundle exec rails console
+
+# Show local IP for mobile testing
+mobile-ip:
+	@echo "$(GREEN)📱 Mobile Testing URLs:$(NC)"
+	@echo ""
+	@echo "Connect your mobile device to the same WiFi network, then visit:"
+	@for ip in $$(ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $$2}'); do \
+		echo "  🌐 http://$$ip:3100"; \
+	done
+	@echo ""
+	@echo "$(YELLOW)Make sure to start the app first with 'make start'$(NC)"

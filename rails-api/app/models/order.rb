@@ -27,6 +27,11 @@ class Order < ApplicationRecord
     pickup_window_end < Time.current && !completed?
   end
 
+  def calculate_total!
+    self.total_amount = order_items.sum { |item| item.price * item.quantity }
+    save!
+  end
+
   private
 
   def pickup_window_end_after_start
