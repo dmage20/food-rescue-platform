@@ -11,7 +11,7 @@
     "available_quantity": 12,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-14T20:00:00Z",
+    "expires_at": "2025-09-17T20:00:00Z",
     "images": ["croissants-1.jpg", "croissants-2.jpg"]
   },
   {
@@ -26,7 +26,7 @@
     "available_quantity": 6,
     "allergens": ["gluten"],
     "dietary_tags": ["vegan"],
-    "expires_at": "2025-09-15T18:00:00Z",
+    "expires_at": "2025-09-18T18:00:00Z",
     "images": ["sourdough-1.jpg"]
   },
   {
@@ -41,7 +41,7 @@
     "available_quantity": 4,
     "allergens": ["gluten", "sesame"],
     "dietary_tags": ["vegetarian", "vegan"],
-    "expires_at": "2025-09-14T19:00:00Z",
+    "expires_at": "2025-09-17T19:00:00Z",
     "images": ["veggie-sandwich.jpg"]
   },
   {
@@ -56,7 +56,7 @@
     "available_quantity": 8,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-15T16:00:00Z",
+    "expires_at": "2025-09-18T16:00:00Z",
     "images": ["choc-muffin-1.jpg", "choc-muffin-2.jpg"]
   },
   {
@@ -71,7 +71,7 @@
     "available_quantity": 10,
     "allergens": ["gluten"],
     "dietary_tags": ["vegan", "high-fiber"],
-    "expires_at": "2025-09-16T18:00:00Z",
+    "expires_at": "2025-09-19T18:00:00Z",
     "images": ["wheat-bread.jpg"]
   },
   {
@@ -86,7 +86,7 @@
     "available_quantity": 6,
     "allergens": ["gluten", "dairy", "eggs", "nuts"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-14T21:00:00Z",
+    "expires_at": "2025-09-17T21:00:00Z",
     "images": ["almond-croissant.jpg"]
   },
   {
@@ -101,7 +101,7 @@
     "available_quantity": 5,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-14T20:00:00Z",
+    "expires_at": "2025-09-17T22:00:00Z",
     "images": ["fruit-tart-1.jpg", "fruit-tart-2.jpg"]
   },
   {
@@ -116,7 +116,7 @@
     "available_quantity": 7,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-15T17:00:00Z",
+    "expires_at": "2025-09-18T17:00:00Z",
     "images": ["blueberry-scone.jpg"]
   },
   {
@@ -131,7 +131,7 @@
     "available_quantity": 15,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-15T12:00:00Z",
+    "expires_at": "2025-09-18T12:00:00Z",
     "images": ["glazed-donut.jpg"]
   },
   {
@@ -146,7 +146,7 @@
     "available_quantity": 12,
     "allergens": ["gluten", "dairy", "eggs"],
     "dietary_tags": ["vegetarian"],
-    "expires_at": "2025-09-15T12:00:00Z",
+    "expires_at": "2025-09-18T13:00:00Z",
     "images": ["chocolate-donut.jpg"]
   }
 ]

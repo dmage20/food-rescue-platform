@@ -8,7 +8,7 @@
     "discounted_price": 12.50,
     "discount_percentage": 50,
     "available_quantity": 5,
-    "expires_at": "2025-09-14T18:00:00Z",
+    "expires_at": "2025-09-17T18:00:00Z",
     "items": [
       { "product_id": 1, "quantity": 4, "name": "Fresh Croissants" },
       { "product_id": 2, "quantity": 1, "name": "Sourdough Bread Loaf" }
@@ -24,7 +24,7 @@
     "discounted_price": 8.00,
     "discount_percentage": 50,
     "available_quantity": 3,
-    "expires_at": "2025-09-14T16:00:00Z",
+    "expires_at": "2025-09-17T16:00:00Z",
     "items": [
       { "product_id": 3, "quantity": 1, "name": "Veggie Sandwich" },
       { "product_id": 4, "quantity": 2, "name": "Chocolate Chip Muffins" }
@@ -40,7 +40,7 @@
     "discounted_price": 11.00,
     "discount_percentage": 50,
     "available_quantity": 2,
-    "expires_at": "2025-09-14T19:00:00Z",
+    "expires_at": "2025-09-17T19:00:00Z",
     "items": [
       { "product_id": 6, "quantity": 2, "name": "Almond Croissants" },
       { "product_id": 7, "quantity": 2, "name": "Fruit Tarts" }
@@ -56,7 +56,7 @@
     "discounted_price": 9.25,
     "discount_percentage": 50,
     "available_quantity": 4,
-    "expires_at": "2025-09-15T15:00:00Z",
+    "expires_at": "2025-09-18T15:00:00Z",
     "items": [
       { "product_id": 8, "quantity": 3, "name": "Blueberry Scones" }
     ],
@@ -74,7 +74,7 @@
     "discounted_price": 16.25,
     "discount_percentage": 50,
     "available_quantity": 3,
-    "expires_at": "2025-09-15T10:00:00Z",
+    "expires_at": "2025-09-18T10:00:00Z",
     "items": [
       { "product_id": 9, "quantity": 7, "name": "Glazed Donuts" },
       { "product_id": 10, "quantity": 6, "name": "Chocolate Donuts" }
@@ -90,7 +90,7 @@
     "discounted_price": 10.00,
     "discount_percentage": 50,
     "available_quantity": 4,
-    "expires_at": "2025-09-16T17:00:00Z",
+    "expires_at": "2025-09-19T17:00:00Z",
     "items": [
       { "product_id": 2, "quantity": 1, "name": "Sourdough Bread Loaf" },
       { "product_id": 5, "quantity": 2, "name": "Whole Wheat Bread" }
