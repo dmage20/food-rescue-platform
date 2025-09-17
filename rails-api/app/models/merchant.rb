@@ -9,7 +9,7 @@ class Merchant < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :address, presence: true
-  validates :latitude, :longitude, presence: true, numericality: true
+  validates :latitude, :longitude, numericality: true, allow_nil: true
 
   scope :nearby, ->(lat, lng, radius_km = 5) {
     where(
