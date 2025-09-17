@@ -8,21 +8,23 @@ class Api::Customers::RegistrationsController < Devise::RegistrationsController
 
   def respond_with(resource, _opts = {})
     if request.method == "POST" && resource.persisted?
+      token = Warden::JWTAuth::UserEncoder.new.call(resource, :customer, nil)[0]
+      
       render json: {
         status: 'success',
         message: 'Customer registered successfully.',
-        data: {
-          customer: {
-            id: resource.id,
-            name: resource.name,
-            email: resource.email
-          }
+        token: token,
+        user: {
+          id: resource.id,
+          name: resource.name,
+          email: resource.email,
+          phone: resource.phone
         }
       }
     elsif request.method == "POST"
       render json: {
         status: 'error',
-        message: 'Registration failed.',
+        message: resource.errors.full_messages.join(', '),
         errors: resource.errors.full_messages
       }, status: :unprocessable_entity
     else
@@ -33,6 +35,6 @@ class Api::Customers::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :preferred_radius, :dietary_preferences, :favorite_categories])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :phone, :preferred_radius, :dietary_preferences, :favorite_categories])
   end
 end

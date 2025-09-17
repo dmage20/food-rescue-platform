@@ -95,7 +95,17 @@ export const useAuthStore = create<AuthStore>()(
             error: null,
           });
         } catch (error: any) {
-          const errorMessage = error.response?.data?.message || 'Registration failed';
+          // Extract error message from response
+          let errorMessage = 'Registration failed';
+          
+          if (error.response?.data?.message) {
+            errorMessage = error.response.data.message;
+          } else if (error.response?.data?.errors && Array.isArray(error.response.data.errors)) {
+            errorMessage = error.response.data.errors.join(', ');
+          } else if (error.message) {
+            errorMessage = error.message;
+          }
+          
           set({
             error: errorMessage,
             isLoading: false,
